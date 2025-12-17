@@ -1,5 +1,5 @@
 // ---------- Config ----------
-const GEMINI_API_KEY = 'AIzaSyAjNEs5e3rl0Zno_759qn1BxIK5GtbUnyQ';
+const GEMINI_API_KEY = 'YOUR_KEY';
 const MODELS = [
   'models/gemini-2.5-flash:generateContent',
   'models/gemini-2.5-pro:generateContent',
