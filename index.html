@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Interview Coach — Model Answers</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🤖</div>
+        <div>
+          <h1>AI Interview Coach</h1>
+          <p class="muted">Practice, compare, and improve — with model answers</p>
+        </div>
+      </div>
+
+      <div class="status" id="apiStatus">✅ Fallback Models: gemini-2.5-flash → gemini-2.5-pro → gemini-2.0-flash</div>
+    </header>
+
+    <section class="controls card">
+  <label for="roleInput" class="label">Job role</label>
+  <div class="row">
+    <input id="roleInput" type="text" placeholder="e.g. Software Engineer, React Developer" autocomplete="off" />
+    <button id="startBtn" class="btn primary">.. Start Mock Interview ..</button>
+    <!-- NEW: regenerate questions for the same role -->
+    <button id="regenerateBtn" class="btn secondary" style="display:none;margin-left:6px;"> New question (same role)</button>
+  </div>
+  <p class="hint">Tip: leave blank to use <strong>Software Engineer</strong>. Questions come with a concise "Model answer".</p>
+</section>
+
+
+    <section id="questionsArea"></section>
+
+    <!-- Answer area (hidden until question appears) -->
+    <section id="answerPanel" class="card" style="display:none;">
+      <div class="qa-row">
+        <div>
+          <label for="answerInput" class="label">Your Answer</label>
+          <textarea id="answerInput" rows="5" placeholder="Write your answer here (Ctrl+Enter to submit)"></textarea>
+        </div>
+        <div class="controls-vertical">
+          <button id="submitAnswerBtn" class="btn secondary"> Get Feedback</button>
+          <button id="revealModelBtn" class="btn outline"> Toggle Model Answer</button>
+        </div>
+      </div>
+      <div id="feedbackContainer" class="feedback-area"></div>
+    </section>
+
+    <footer class="footer">
+      <small>Built with Generative AI •</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent1:#7c3aed;
+  --accent2:#06b6d4;
+  --glass: rgba(255,255,255,0.04);
+  --muted: #94a3b8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius: 14px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Avenir,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(180deg, #071126 0%, #071226 40%, #031029 100%);
+  color:#e6eef8;
+  padding:28px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* App container */
+.app{
+  max-width:920px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:56px;height:56px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  box-shadow:0 6px 20px rgba(124,58,237,0.18);
+  font-size:24px;
+}
+.brand h1{margin:0;font-size:18px;font-weight:700}
+.brand .muted{margin:0;color:var(--muted);font-size:12px}
+.status{
+  font-size:13px;padding:8px 14px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  border-radius:12px;color:var(--muted);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:18px;border-radius:var(--radius);
+  box-shadow: 0 8px 40px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Controls */
+.label{display:block;color:var(--muted);font-size:13px;margin-bottom:8px}
+.row{display:flex;gap:12px;align-items:center}
+input[type="text"]{
+  flex:1;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+  background:transparent;color:inherit;font-size:14px;
+  outline:none;transition:box-shadow .18s, border-color .18s;
+}
+input:focus{box-shadow:0 6px 20px rgba(7,12,24,0.6);border-color:rgba(124,58,237,0.6)}
+.btn{
+  padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+}
+.btn.primary{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:white;box-shadow:0 8px 30px rgba(7,12,24,0.6);
+}
+.btn.secondary{
+  background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.04); color: #e6eef8;
+}
+.btn.outline{
+  background:transparent;border:1px dashed rgba(255,255,255,0.04);
+  color:var(--muted);
+}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+/* Questions area */
+#questionsArea {
+  display: flex;
+  justify-content: center; /* center the question */
+  margin-top: 16px;
+}
+
+.qcard {
+  width: 100%;
+  max-width: 800px; /* restrict width */
+  padding: 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.qmeta{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.qtitle{font-weight:700;font-size:16px;color:#eaf6ff}
+.qtext{color:var(--muted);font-size:14px;margin-top:4px}
+.qactions{display:flex;gap:8px}
+.tag{padding:6px 10px;border-radius:999px;font-size:12px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+/* Model answer (collapsible) */
+.model{
+  margin-top:8px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.009));
+  border:1px solid rgba(255,255,255,0.02);display:none;
+}
+.model pre{margin:0;font-family:inherit;font-size:13px;color:#dbeafe;white-space:pre-wrap}
+
+/* Answer panel */
+.qa-row{display:flex;gap:16px;align-items:flex-start}
+.qa-row textarea{
+  width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
+  background:transparent;color:inherit;font-size:14px;resize:vertical;
+}
+.controls-vertical{display:flex;flex-direction:column;gap:10px}
+.feedback-area{margin-top:12px}
+
+/* Feedback card */
+.feedback-card{
+  padding:12px;border-radius:10px;background:linear-gradient(180deg,#041124, rgba(255,255,255,0.006));
+  border:1px solid rgba(255,255,255,0.02);margin-top:8px;color:var(--muted);
+}
+.feedback-card strong{color:#e6eef8}
+
+/* Footer */
+.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:6px}
+
+/* small responsive tweaks */
+@media (max-width:720px){
+  .qa-row{flex-direction:column}
+  .row{flex-direction:column}
+  .controls-vertical{flex-direction:row}
+}
